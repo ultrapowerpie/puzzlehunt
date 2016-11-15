@@ -1,0 +1,56 @@
+{# _myapp/templates/about.html_ #}
+
+{% extends "layout.html" %}
+
+{% block title %}
+Welcome
+{% endblock %}
+
+{% block content %}
+<div id="welcomeContainer">
+
+  <h3 id="title1">We heard you like puzzles, so we've got one for you.</h3>
+  <h3 id="title2">The key is 3467. Write it down somewhere.</h3>
+
+    <figure id="puzzleContainer">
+
+      <canvas id="puzzle" width="800" height="600"></canvas>
+
+      <figcaption>
+
+        <p id="hint0">The answer is a number!</p>
+        <p id="hint1">How good is your handwriting?</p>
+        <p id="hint2">That's the key, not the answer!</p>
+
+        <div class="form-group" id="answerContainer">
+          <form action="javascript:;" onsubmit="submitAnswer()">
+          <input type="text" class="form-control" id="answer" name="answer">
+          <input class="form-control" id="submitLogin" type=submit value="Submit">
+        </form>
+        </div>
+
+      </figcaption>
+
+    </figure>
+
+  {% assets "scratch" %}
+  <script type="text/javascript" src="{{ ASSET_URL }}"></script>
+  {% endassets %}
+
+</div>
+
+<div id="loginContainer">
+
+  <h1>Congrats, you solved the puzzle. But what was it for?</h1>
+  <h3>Enter your princeton email to find out.</h3>
+
+    <form action="" method="post">
+      <input class="form-control" id="inputEmail"type=text name=email>
+      <input class="form-control" id="submitLogin" type=submit value="Okay">
+    </form>
+
+</div>
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

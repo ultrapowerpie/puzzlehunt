@@ -1,0 +1,209 @@
+body {
+  color: white;
+  font-weight: 700;
+  font-family: "Lucida Console", "Lucida Sans Typewriter", Monaco,
+                "Bitstream Vera Sans Mono", monospace;
+  margin-top: 5em;
+  text-align: center;
+
+  background:
+  linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
+  linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
+  linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
+  linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
+  linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
+  linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%,
+                  transparent 75%, #242424 75%, #242424);
+  background-color: #131313;
+  background-size: 20px 20px;
+
+  animation: fadein 2s;
+  -moz-animation: fadein 2s; /* Firefox */
+  -webkit-animation: fadein 2s; /* Safari and Chrome */
+  -o-animation: fadein 2s; /* Opera */
+}
+#puzzle {
+  display: block;
+  margin: 0 auto;
+  background-image: url('../images/digits_back.png');
+  background-image: -webkit-image-set(url('../images/digits_back.png') 2x );
+  background-size: cover;
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  cursor:  crosshair;
+}
+#puzzleContainer {
+  text-align: center;
+}
+#puzzleContainer figcaption {
+  margin-top: 2rem;
+}
+#answerContainer {
+  margin: auto;
+  width: 8em;
+}
+#hint0,
+#hint1,
+#hint2,
+#hint3 {
+  display: none;
+}
+#submitAnswer:hover,
+#submitLogin:hover {
+  background: gainsboro;
+}
+#inputEmail {
+  margin: auto;
+  width: 12em;
+}
+#submitLogin,
+#submitAnswer {
+  margin: auto;
+  margin-top: 0.5em;
+  width: 8em;
+}
+#loginContainer {
+  display: none;
+  text-align: center;
+}
+#bigContainer {
+  display: inline-block;
+}
+#cancelled {
+  display: none;
+  margin: 2em;
+}
+#clockContainer {
+  visibility: hidden;
+  width: 49em;
+  margin: auto;
+  padding: 2em;
+}
+.squaredThree {
+  width: 3em;
+  position: relative;
+  margin: 1em auto;
+}
+.squaredThree label {
+  width: 3em;
+  height: 3em;
+  cursor: pointer;
+  position: absolute;
+  top: 1em;
+  left: 1em;
+  background: -webkit-linear-gradient(top, #222222 0%, #45484d 100%);
+  background: linear-gradient(to bottom, #222222 0%, #45484d 100%);
+  border-radius: 4px;
+  box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.5),
+                    0px 1px 0px rgba(255, 255, 255, 0.4);
+}
+.squaredThree label:after {
+  content: '';
+  width: 2em;
+  height: 1.2em;
+  position: absolute;
+  top: 0.7em;
+  left: 0.6em;
+  border: 0.5em solid #fcfff4;
+  border-top: none;
+  border-right: none;
+  background: transparent;
+  opacity: 0;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+.squaredThree label:hover::after {
+  opacity: 0.3;
+}
+.squaredThree input[type=checkbox] {
+  visibility: hidden;
+}
+.squaredThree input[type=checkbox]:checked + label:after {
+  opacity: 1;
+}
+@keyframes fadein {
+    from { opacity:0; }
+    to { opacity:1; }
+}
+@-moz-keyframes fadein { /* Firefox */
+    from { opacity:0; }
+    to { opacity:1; }
+}
+@-webkit-keyframes fadein { /* Safari and Chrome */
+    from { opacity:0; }
+    to { opacity:1; }
+}
+@-o-keyframes fadein { /* Opera */
+    from { opacity:0; }
+    to { opacity: 1; }
+}
+.table-fill {
+  background: white;
+  border-radius:3px;
+  border-collapse: collapse;
+  height: 320px;
+  margin: auto;
+  max-width: 600px;
+  padding:5px;
+  width: 100%;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  animation: float 4s infinite;
+}
+th {
+  color:#D5DDE5;;
+  background:#1b1e24;
+  border-bottom:4px solid #9ea7af;
+  border-right: 1px solid #343a45;
+  padding: 1em;
+  text-align:left;
+  vertical-align:middle;
+}
+th:first-child {
+  border-top-left-radius:3px;
+}
+th:last-child {
+  border-top-right-radius:3px;
+  border-right:none;
+}
+tr {
+  border-top: 1px solid #C1C3D1;
+  border-bottom-: 1px solid #C1C3D1;
+  color:#666B85;
+  font-weight:normal;
+}
+tr:hover td {
+  background:#4E5066;
+  color:#FFFFFF;
+  border-top: 1px solid #22262e;
+  border-bottom: 1px solid #22262e;
+}
+tr:first-child {
+  border-top:none;
+}
+tr:last-child {
+  border-bottom:none;
+}
+tr:nth-child(odd) td {
+  background:#EBEBEB;
+}
+tr:nth-child(odd):hover td {
+  background:#4E5066;
+}
+tr:last-child td:first-child {
+  border-bottom-left-radius:3px;
+}
+tr:last-child td:last-child {
+  border-bottom-right-radius:3px;
+}
+td {
+  background:#FFFFFF;
+  padding: 0.5em 1em;
+  text-align:left;
+  vertical-align:middle;
+  font-weight:300;
+  border-right: 1px solid #C1C3D1;
+}
+td:last-child {
+  border-right: 0px;
+}

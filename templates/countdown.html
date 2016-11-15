@@ -1,0 +1,44 @@
+{# _myapp/templates/about.html_ #}
+
+{% extends "layout.html" %}
+
+{% block title %}
+Welcome
+{% endblock %}
+
+{% block imports %}
+  {% assets "clockStyle" %}
+    <link rel="stylesheet" href="{{ ASSET_URL }}" />
+  {% endassets %}
+{% endblock %}
+
+{% block content %}
+<div id="bigContainer">
+  <h1>{{ mes }}</h1>
+  <h2>Please join us for a night of fun and puzzles at:</h2>
+  <h3>40 Prospect Ave</h3>
+  <h3>12-03-2016</h3>
+  <h3>10:00pm</h3>
+  <h3>Semi-Formal Attire Required</h3>
+
+  <h3>Will you be there?</h3>
+
+  <div class="squaredThree">
+    <input type="checkbox" value="None" id="squaredThree" name="rsvp"/>
+    <label for="squaredThree"></label>
+  </div>
+  <br>
+  <h3 id="cancelled">Your reservation has been cancelled.</h3>
+  <div id="clockContainer">
+    <h3>Thanks for RSVPing. See you in:</h3>
+    <br>
+    <div class="clock"></div>
+  </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+  {% assets "clock" %}
+    <script type="text/javascript" src="{{ ASSET_URL }}"></script>
+  {% endassets %}
+{% endblock %}

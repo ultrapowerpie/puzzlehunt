@@ -1,0 +1,12 @@
+Flask==0.11.1
+Flask-Assets==0.11
+Flask-SQLAlchemy==2.1
+gunicorn==19.6.0
+itsdangerous==0.24
+Jinja2==2.8
+psycopg2==2.6.1
+requests==2.10.0
+ujson==1.35
+virtualenv==15.0.3
+webassets==0.11.1
+Werkzeug==0.11.10

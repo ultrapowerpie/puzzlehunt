@@ -1,0 +1,28 @@
+{# _visualize/templates/layout.html_ #}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>{% block title %}{% endblock %}</title>
+  <meta charset="utf-8" >
+  <meta name="viewport" content="width=device-width" />
+  {% assets "style" %}
+    <link rel="stylesheet" href="{{ ASSET_URL }}" />
+  {% endassets %}
+
+  {% assets "script" %}
+    <script type="text/javascript" src="{{ ASSET_URL }}"></script>
+  {% endassets %}
+
+  {% block imports %}{% endblock %}
+
+</head>
+<body class = "application">
+
+      {% block content %}{% endblock %}
+
+  <footer>
+    {% block footer %}{% endblock %}
+  </footer>
+</body>
+</html>

@@ -1,0 +1,43 @@
+{# _myapp/templates/about.html_ #}
+
+{% extends "layout.html" %}
+
+{% block title %}
+Console
+{% endblock %}
+
+{% block content %}
+  <h1>Manage Responses</h1>
+  <br>
+  <h3>Current cap: {{ cap }}</h3>
+  <h3># of Sophomores RSVPed: {{ rsvp_num }}</h3>
+  <h3># of Sophomores Waitlisted: {{ wait_num }}</h3>
+  <h3># of Sophomores Visited: {{ visit_num }}</h3>
+  <br>
+  <p>Change cap</p>
+  <form action="" method="post">
+    <input class="form-control" id="inputEmail"type=text name=cap>
+    <input class="form-control" id="submitLogin" type=submit value="Change">
+  </form>
+  <br>
+  <table class="table-fill" id="usertable">
+    <thead>
+      <tr>
+        <th class="text-left">Email</th>
+        <th class="text-left">First Name</th>
+        <th class="text-left">Last Name</th>
+        <th class="text-left">Status</th>
+      </tr>
+    </thead>
+    <tbody class="table-hover">
+      {% for user in users %}
+      <tr>
+        <td class="text-left">{{ user[0] }}</td>
+        <td class="text-left">{{ user[1] }}</td>
+        <td class="text-left">{{ user[2] }}</td>
+        <td class="text-left">{{ user[3] }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
